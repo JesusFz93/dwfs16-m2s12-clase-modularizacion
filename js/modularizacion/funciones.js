@@ -1,5 +1,4 @@
 import { promesa1 } from "./promesas.js";
-
 const llamarUsuarios = async () => {
   try {
     const respuesta = await promesa1;
@@ -9,8 +8,4 @@ const llamarUsuarios = async () => {
   }
 };
 
-const saludar = () => {
-  console.log("Hola mundo");
-};
-
-export { llamarUsuarios, saludar };
+export { llamarUsuarios };

@@ -2,3 +2,7 @@ body {
     color: white;
     background-color: rgb(70, 70, 70);
 }
+
+#myChart {
+    background-color: white;
+}

@@ -1,9 +1,14 @@
 const ctx = document.getElementById("myChart");
+const alertDanger = document.getElementById("alertDanger");
+const pMensaje = document.getElementById("pMensaje");
 // https://ucamp-api.onrender.com/api/v1/scores
 
 const obtenerCalificaciones = async () => {
+  pMensaje.innerHTML = "Cargando grafica, espera un momento!";
+  alertDanger.classList.remove("d-none");
   const resp = await fetch("https://ucamp-api.onrender.com/api/v1/scores");
   const json = await resp.json();
+  // console.log(json);
 
   pintarGrafica(json.data);
 };
@@ -37,6 +42,9 @@ const pintarGrafica = (calificacionesArray) => {
       },
     },
   });
+
+  pMensaje.innerHTML = "";
+  alertDanger.classList.add("d-none");
 };
 
 window.addEventListener("load", obtenerCalificaciones);
